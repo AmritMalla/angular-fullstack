@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'full-stack-frontend';
+  title: string;
+  constructor() {
+    this.title = 'full-stack-frontend';
+  }
 }

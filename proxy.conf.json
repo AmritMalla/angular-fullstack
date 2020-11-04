@@ -1,0 +1,8 @@
+{
+    "/api/v1": {
+        "target": "https://spring-angular-fullstack.herokuapp.com/",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

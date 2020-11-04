@@ -1,0 +1,27 @@
+<div>
+    <h3 class="text-center">Checkout</h3>
+</div>
+<div class="container">
+    <div class="table-responsive table-striped">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>User</th> 
+                    <th>Book</th>
+                    <th>Checkout Date</th>
+                    <th>Return Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let checkout of checkouts">
+                    <td> {{checkout.id}} </td>
+                    <td> {{checkout.userId}} </td>
+                    <td> {{checkout.bookId}} </td>
+                    <td> {{checkout.checkoutDate}} </td>
+                    <td> {{checkout.returnDate}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
