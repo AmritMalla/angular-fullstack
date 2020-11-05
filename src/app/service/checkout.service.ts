@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -9,10 +10,12 @@ import { Checkout } from '../model/checkout';
 })
 export class CheckoutService {
 
+  baseUrl = environment.baseUrl;
+
   constructor(private http: HttpClient) { }
 
   getCheckouts(): Observable<Checkout[]> {
-    return this.http.get<Checkout[]>('/api/v1/checkouts')
+    return this.http.get<Checkout[]>(this.baseUrl + '/api/v1/checkouts')
       .pipe(catchError(this.handleError('getCheckout', [])));
   }
 

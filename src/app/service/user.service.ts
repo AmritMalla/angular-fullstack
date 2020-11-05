@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
@@ -13,10 +14,12 @@ const httpOptions = {
 })
 export class UserService {
 
+  baseUrl = environment.baseUrl;
+
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>('/api/v1/users')
+    return this.http.get<User[]>(this.baseUrl + '/api/v1/users')
       .pipe(catchError(this.handleError<User[]>('getUsers', [])));
   }
 

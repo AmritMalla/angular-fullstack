@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { catchError } from 'rxjs/operators';
 import { Book } from './../model/book';
 import { Observable, of } from 'rxjs';
@@ -9,10 +10,11 @@ import { Injectable } from '@angular/core';
 })
 export class BookService {
 
+  baseUrl = environment.baseUrl;
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>('/api/v1/books')
+    return this.http.get<Book[]>(this.baseUrl + '/api/v1/books')
       .pipe(catchError(this.handleError<Book[]>('getBooks', [])));
   }
 
