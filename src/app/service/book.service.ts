@@ -14,6 +14,7 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<Book[]> {
+    console.log(this.baseUrl + '/api/v1/books');
     return this.http.get<Book[]>(this.baseUrl + '/api/v1/books')
       .pipe(catchError(this.handleError<Book[]>('getBooks', [])));
   }
