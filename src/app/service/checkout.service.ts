@@ -15,7 +15,7 @@ export class CheckoutService {
   constructor(private http: HttpClient) { }
 
   getCheckouts(): Observable<Checkout[]> {
-    return this.http.get<Checkout[]>(this.baseUrl + '/api/v1/checkouts')
+    return this.http.get<Checkout[]>(this.baseUrl + '/checkouts')
       .pipe(catchError(this.handleError('getCheckout', [])));
   }
 

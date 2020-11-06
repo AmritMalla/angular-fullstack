@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080/api/v10'
+  baseUrl: 'https://spring-angular-fullstack.herokuapp.com/api/v1'
 };
 
 /*
